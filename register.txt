@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Daily Brew</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            line-height: 1.6;
+            background: url('file:///C:/Users/glenn/Downloads/coffee%20pic/pexels-afta-putta-gunawan-683039.jpg') no-repeat center center fixed;
+            background-size: cover;
+            background-attachment: fixed;
+            color: #fff;
+        }
+
+        .hidden {
+            display: none;
+        }
+
+        .container {
+            width: 100%;
+            max-width: 400px;
+            margin: 100px auto;
+            background: rgba(255, 255, 255, 0.9);
+            padding: 40px;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            color: #000;
+        }
+
+        input,
+        button {
+            width: 100%;
+            padding: 10px;
+            margin: 10px 0;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+
+        button {
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+        }
+
+        button:hover {
+            background-color: #45a049;
+        }
+
+        .toggle {
+            text-align: center;
+            margin-top: 10px;
+        }
+
+        .toggle a {
+            color: #007BFF;
+            text-decoration: none;
+            cursor: pointer;
+        }
+
+        header,
+        .main-content,
+        footer {
+            display: none;
+        }
+
+        header {
+            background: #4b382a;
+            color: #f3f3f3;
+            padding: 20px 10px;
+            text-align: center;
+        }
+
+        header nav {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            background-color: #6b4c3a;
+            padding: 10px 0;
+        }
+
+        header nav a {
+            text-decoration: none;
+            color: #f3f3f3;
+            font-weight: bold;
+            padding: 5px 10px;
+            transition: color 0.3s ease;
+        }
+
+        header nav a:hover {
+            color: #ffdd57;
+        }
+ </style>
+</head>
+
+<body>
+    <!-- Registration/Login Section -->
+    <div id="auth-container" class="container">
+        <h1 id="form-title">Register</h1>
+        <div id="registration-form">
+            <input type="text" id="name" placeholder="Name" required>
+            <input type="text" id="email" placeholder="Email" required>
+            <input type="text" id="contact" placeholder="Contact" required>
+            <input type="password" id="password" placeholder="Password" required>
+            <button id="register-btn">Register</button>
+            <div class="toggle">
+                <p>Already have an account? <a id="switch-to-login">Login</a></p>
+            </div>
+        </div>
+        <div id="login-form" class="hidden">
+            <input type="text" id="login-name" placeholder="Name" required>
+            <input type="text" id="login-email" placeholder="Email" required>
+            <input type="password" id="login-password" placeholder="Password" required>
+            <button id="login-btn">Login</button>
+            <div class="toggle">
+                <p>Don't have an account? <a id="switch-to-register">Register</a></p>
+            </div>
+        </div>
+    </div>
+
+ <script>
+        const authContainer = document.getElementById('auth-container');
+        const registrationForm = document.getElementById('registration-form');
+        const loginForm = document.getElementById('login-form');
+        const formTitle = document.getElementById('form-title');
+        const switchToLogin = document.getElementById('switch-to-login');
+        const switchToRegister = document.getElementById('switch-to-register');
+        const mainContent = document.querySelectorAll('.main-content');
+        const header = document.querySelector('header');
+
+        // Switch to login
+        switchToLogin.addEventListener('click', () => {
+            registrationForm.classList.add('hidden');
+            loginForm.classList.remove('hidden');
+            formTitle.textContent = 'Login';
+        });
+
+        // Switch to register
+        switchToRegister.addEventListener('click', () => {
+            loginForm.classList.add('hidden');
+            registrationForm.classList.remove('hidden');
+            formTitle.textContent = 'Register';
+        });
+
+        // Handle registration
+        document.getElementById('register-btn').addEventListener('click', () => {
+            const name = document.getElementById('name').value;
+            const contact = document.getElementById('contact').value;
+            const password = document.getElementById('password').value;
+
+            if (name && contact && password) {
+                const user = { name, contact, password };
+                localStorage.setItem('user', JSON.stringify(user));
+                alert('Registration successful! Please login.');
+                registrationForm.classList.add('hidden');
+                loginForm.classList.remove('hidden');
+                formTitle.textContent = 'Login';
+            } else {
+                alert('Please fill out all fields.');
+            }
+        });
+
+        // Handle login
+        document.getElementById('login-btn').addEventListener('click', () => {
+            const loginName = document.getElementById('login-name').value;
+            const loginPassword = document.getElementById('login-password').value;
+            const storedUser = JSON.parse(localStorage.getItem('user'));
+
+            if (storedUser && storedUser.name === loginName && storedUser.password === loginPassword) {
+                alert(`Welcome, ${loginName}!`);
+                authContainer.classList.add('hidden');
+                header.style.display = 'block';
+                mainContent.forEach(section => section.style.display = 'block');
+            } else {
+                alert('Invalid credentials. Please try again.');
+            }
+        });
+    </script>
+</body>
+
+</html>

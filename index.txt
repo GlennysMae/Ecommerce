@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Daily Brew</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            line-height: 1.6;
+        }
+
+        header {
+            background: #4b382a;
+            color: #f3f3f3;
+            padding: 20px 10px;
+            text-align: center;
+        }
+
+        header nav {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            background-color: #6b4c3a;
+            padding: 10px 0;
+        }
+
+        header nav a {
+            text-decoration: none;
+            color: #f3f3f3;
+            font-weight: bold;
+            padding: 5px 10px;
+            transition: color 0.3s ease;
+        }
+
+        header nav a:hover {
+            color: #ffdd57;
+        }
+
+        .hero {
+            text-align: center;
+            background: url('file:///C:/Users/glenn/Downloads/06c5c78346458eedaff0c148d4897730_Nero%20AI_Photo_Face%20(1).jpeg') no-repeat center/cover;
+            color: #fff;
+            padding: 200px 20px;
+        }
+
+        .hero h1 {
+            font-size: 3em;
+            margin: 0;
+        }
+
+        .hero p {
+            font-size: 1.3em;
+            margin: 15px 0 20px;
+        }
+
+        .hero button {
+            padding: 10px 20px;
+            background-color: #ffdd57;
+            color: #000;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-weight: bold;
+            transition: background-color 0.3s ease;
+        }
+
+        section {
+            padding: 50px 20px;
+            text-align: center;
+        }
+
+        .services {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+            justify-content: center;
+        }
+
+        .service {
+            border: 1px solid #ddd;
+            padding: 20px;
+            border-radius: 8px;
+            max-width: 300px;
+            background-color: #f9f9f9;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        }
+
+        .service img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 5px;
+        }
+
+        .section1{
+            margin: 20px auto;
+            max-width: 800px;
+        }
+
+        #cart {
+            margin-top: 20px;
+            padding: 15px;
+            background-color: #fff;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+        }
+
+        footer {
+            background-color: #333;
+            color: #fff;
+            text-align: center;
+            padding: 20px;
+        }
+
+        button {
+            padding: 10px 20px;
+            background-color: #ffdd57;
+            color: #000;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-weight: bold;
+        }
+
+        /* Add a border around the words Coffee and Snacks */
+        .bordered {
+            display: inline-block;
+            padding: 5px 10px;
+            border: 2px solid #6f4e37;
+            border-radius: 5px;
+            margin-bottom: 20px;
+        }
+
+<title>Scan to Pay</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            padding: 20px;
+        }        
+
+        img {
+            max-width: 200px;
+            height: auto;
+            width: 100%;
+            margin: 20px 0;
+            border: 2px solid #ccc;
+            border-radius: 10px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <header>
+        <h1>The Daily Brew</h1>
+        <nav>
+            <a href="#about">About Us</a>
+            <a href="!DOCTYPESER.html">Services</a>
+            <a href="!DOCTYPETES.html">Testimonials</a>
+        </nav>
+    </header>
+
+    <section class="hero">
+        <h1>Welcome to The Daily Brew</h1>
+        <p>Your perfect coffee companion</p>
+    </section>
+
+    <section id="about" class="section">
+        <h2>About Us</h2>
+        <p>Welcome to The Daily Brew, your local coffee haven where every cup is crafted with care. We pride ourselves on offering premium coffee, artisan teas, and delicious snacks in a cozy, welcoming space. Whether you’re here to work, relax, or connect with friends, we’re dedicated to making your experience special.</p>
+        <p>Our beans are ethically sourced, and every sip reflects our passion for quality and sustainability. At The Daily Brew, great coffee isn’t just a drink—it’s a way to bring people together. Stop by and see what makes us your perfect coffee companion!</p>
+    </section>
+
+    <section id="gcash-payment" class="section" style="text-align: justify; background-image: url(''); background-size: cover; background-position: center center; padding: 20px;">
+
+	 <p><img src="file:///C:/Users/glenn/Downloads/coffee%20pic/2206208.webp" alt="GCash Logo" style="width: 100px; height: auto; margin-right: 10px; vertical-align: middle;">We accept GCash for easy and secure payments!</p>
+
+    </section>
+
+    <section id="contact" class="section1">
+        <h2>Contact Us:</h2>
+        <p>Email: support@thedailybrew.com</p>
+        <p>Phone: 0997 143 8948</p>
+        <p>Location: 143 Coffee Street, Valencia City</p>
+    </section>
+
+    <h3>Thank you for choosing us!</h3>
+
+    <footer>
+        <p>&copy; 2024 Daily Brew. All rights reserved.</p>
+    </footer>
+
+</body>
+
+</html>

@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Daily Brew</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            line-height: 1.6;
+            background: url('file:///C:/Users/glenn/Downloads/coffee%20pic/pexels-afta-putta-gunawan-683039.jpg');
+            background-size: cover;
+            background-attachment: fixed;
+        }
+        .hidden {
+            display: none;
+        }
+        header {
+            background: #4b382a;
+            color: #f3f3f3;
+            padding: 20px 10px;
+            text-align: center;
+        }
+        header nav {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            background-color: #6b4c3a;
+            padding: 10px 0;
+        }
+        header nav a {
+            text-decoration: none;
+            color: #f3f3f3;
+            font-weight: bold;
+            padding: 5px 10px;
+            transition: color 0.3s ease;
+        }
+        header nav a:hover {
+            color: #ffdd57;
+        }
+        .hero {
+            text-align: center;
+            background: url('file:///C:/Users/glenn/Downloads/06c5c78346458eedaff0c148d4897730_Nero%20AI_Photo_Face%20(1).jpeg') no-repeat center/cover;
+            color: #fff;
+            padding: 200px 20px;
+        }
+        .hero h1 {
+            font-size: 3em;
+            margin: 0;
+        }
+        .hero p {
+            font-size: 1.3em;
+            margin: 15px 0 20px;
+        }
+        .container {
+            width: 100%;
+            max-width: 400px;
+            margin: 100px auto;
+            background: rgba(255, 255, 255, 0.9);
+            padding: 40px;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            color: #000;
+        }
+        input, button {
+            width: 100%;
+            padding: 10px;
+            margin: 10px 0;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+        button {
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+        }
+        button:hover {
+            background-color: #45a049;
+        }
+ button1 {
+            color: white;
+            border: none;
+        }
+
+        .toggle {
+            text-align: center;
+            margin-top: 10px;
+        }
+        .toggle a {
+            color: #007BFF;
+            text-decoration: none;
+            cursor: pointer;
+        }
+        section {
+            padding: 100px 30px;
+            text-align: center;
+	    background-color:#FFFFFF;
+            font-size: 1.1em;
+            
+        }
+        footer {
+            background-color: #333;
+            color: #fff;
+            text-align: center;
+            padding: 20px;
+        }
+    </style>
+</head>
+<body>
+    <div id="auth-container" class="container">
+        <h1 id="form-title">Register</h1>
+        <div id="registration-form">
+            <input type="text" id="name" placeholder="Name" required>
+            <input type="text" id="email" placeholder="Email" required>
+            <input type="password" id="password" placeholder="Password" required>
+            <button id="register-btn">Register</button>
+            <div class="toggle">
+                <p>Already have an account? <a id="switch-to-login">Login</a></p>
+            </div>
+        </div>
+        <div id="login-form" class="hidden">
+            <input type="text" id="login-email" placeholder="Email" required>
+            <input type="password" id="login-password" placeholder="Password" required>
+            <button id="login-btn">Login</button>
+            <div class="toggle">
+                <p>Don't have an account? <a id="switch-to-register">Register</a></p>
+            </div>
+        </div>
+    </div>
+
+    <header class="hidden">
+        <h1>The Daily Brew</h1>
+        <nav>
+            <a href="#about">About Us</a>
+            <a href="services.html">Services</a>
+            <a href="testimonial.html">Testimonials</a>
+        </nav>
+        <button1 id="logout-btn">Logout</button>
+    </header>
+
+    <section class="hero hidden">
+        <h1>Welcome to The Daily Brew</h1>
+        <p>Your perfect coffee companion</p>
+    </section>
+
+    <section id="about" class="hidden">
+        <h2>About Us</h2>
+        <p>Welcome to The Daily Brew, your local coffee haven where every cup is crafted with care. We pride ourselves on offering premium coffee, artisan teas, and delicious snacks in a cozy, welcoming space. Whether you’re here to work, relax, or connect with friends, we’re dedicated to making your experience special.</p>
+        <p>Our beans are ethically sourced, and every sip reflects our passion for quality and sustainability. At The Daily Brew, great coffee isn’t just a drink—it’s a way to bring people together. Stop by and see what makes us your perfect coffee companion!</p>
+       
+	<h2>Contact Us:</h2>
+        <p>Email: support@thedailybrew.com</p>
+        <p>Phone: 0997 143 8948</p>
+        <p>Location: 143 Coffee Street, Valencia City</p>
+
+        <h3>Thank you for choosing us!</h3>
+    </section>
+
+    <footer class="hidden">
+        <p>&copy; 2024 The Daily Brew. All rights reserved.</p>
+    </footer>
+
+    <script>
+        const authContainer = document.getElementById('auth-container');
+        const registrationForm = document.getElementById('registration-form');
+        const loginForm = document.getElementById('login-form');
+        const formTitle = document.getElementById('form-title');
+        const switchToLogin = document.getElementById('switch-to-login');
+        const switchToRegister = document.getElementById('switch-to-register');
+        const header = document.querySelector('header');
+        const hero = document.querySelector('.hero');
+        const about = document.getElementById('about');
+        const footer = document.querySelector('footer');
+        const logoutBtn = document.getElementById('logout-btn');
+
+        // Check if user is already logged in
+        if (localStorage.getItem('loggedIn') === 'true') {
+            displayHomepage();
+        }
+
+  // Helper function to check if input is only numbers
+    function isNumeric(input) {
+        return /^\d+$/.test(input);
+    }
+
+
+        // Switch to login
+        switchToLogin.addEventListener('click', () => {
+            registrationForm.classList.add('hidden');
+            loginForm.classList.remove('hidden');
+            formTitle.textContent = 'Login';
+        });
+
+        // Switch to register
+        switchToRegister.addEventListener('click', () => {
+            loginForm.classList.add('hidden');
+            registrationForm.classList.remove('hidden');
+            formTitle.textContent = 'Register';
+        });
+
+        // Handle registration
+        document.getElementById('register-btn').addEventListener('click', () => {
+            const name = document.getElementById('name').value.trim();
+            const email = document.getElementById('email').value.trim();
+            const password = document.getElementById('password').value.trim();
+
+   if (isNumeric(name)) {
+            alert('Name cannot contain only numbers. Please enter a valid name.');
+            return;
+        }
+
+        if (isNumeric(email)) {
+            alert('Email cannot contain only numbers. Please enter a valid email.');
+            return;
+        }
+
+
+            if (name && email && password) {
+                localStorage.setItem('user', JSON.stringify({ name, email, password }));
+                alert('Registration successful! Please login.');
+                switchToLogin.click();
+            } else {
+                alert('Please fill out all fields.');
+            }
+        });
+
+        // Handle login
+        document.getElementById('login-btn').addEventListener('click', () => {
+            const loginEmail = document.getElementById('login-email').value.trim();
+            const loginPassword = document.getElementById('login-password').value.trim();
+            const storedUser = JSON.parse(localStorage.getItem('user'));
+
+            console.log('Login Attempt:', loginEmail, loginPassword);
+            console.log('Stored User:', storedUser);
+
+ if (isNumeric(loginEmail)) {
+            alert('Email cannot contain only numbers. Please enter a valid email.');
+            return;
+        }
+
+
+            if (storedUser && storedUser.email === loginEmail && storedUser.password === loginPassword) {
+                alert(`Welcome, ${storedUser.name}!`);
+                localStorage.setItem('loggedIn', 'true');
+                displayHomepage();
+            } else {
+                alert('Invalid credentials. Please try again.');
+            }
+        });
+
+        // Handle logout
+        logoutBtn.addEventListener('click', () => {
+            localStorage.removeItem('loggedIn');
+            alert('You have logged out.');
+            window.location.reload();  // Reload the page to show the login/register screen
+        });
+
+        // Display homepage and hide auth container
+        function displayHomepage() {
+            authContainer.classList.add('hidden');
+            header.classList.remove('hidden');
+            hero.classList.remove('hidden');
+            about.classList.remove('hidden');
+            footer.classList.remove('hidden');
+        }
+    </script>
+</body>
+</html>

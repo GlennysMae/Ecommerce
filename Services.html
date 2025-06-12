@@ -1,0 +1,615 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Services - The Daily Brew</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            line-height: 1.6;
+        }
+        header {
+            background: #4b382a;
+            color: #f3f3f3;
+            padding: 20px 10px;
+            text-align: center;
+        }
+        header nav {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            background-color: #6b4c3a;
+            padding: 10px 0;
+        }
+        header nav a {
+            text-decoration: none;
+            color: #f3f3f3;
+            font-weight: bold;
+            padding: 5px 10px;
+            transition: color 0.3s ease;
+        }
+        header nav a:hover {
+            color: #ffdd57;
+        }
+        .services {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+            justify-content: center;
+        }
+        .service {
+            border: 1px solid #ddd;
+            padding: 20px;
+            border-radius: 8px;
+            max-width: 300px;
+            background-color: #f9f9f9;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        }
+        .service img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 5px;
+        }
+        #cart {
+            margin-top: 20px;
+            padding: 15px;
+            background-color: #fff;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+        }
+        footer {
+            background-color: #333;
+            color: #fff;
+            text-align: center;
+            padding: 20px;
+        }
+        button {
+            padding: 10px 20px;
+            background-color: #ffdd57;
+            color: #000;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-weight: bold;
+        }
+.service img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 5px;
+        }
+ section {
+            padding: 50px 20px;
+            text-align: center;
+        }
+
+        .bordered {
+            display: inline-block;
+            padding: 5px 10px;
+            border: 2px solid #6f4e37;
+            border-radius: 5px;
+            margin-bottom: 20px;
+        }
+        #cart-items li {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin: 5px 0;
+        }
+        button {
+            padding: 10px 20px;
+            background-color: #ffdd57;
+            color: #000;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-weight: bold;
+        }
+
+ /* Add a border around the words Coffee and Snacks */
+    .bordered {
+      display: inline-block;
+      padding: 5px 10px;
+      border: 2px solid #6f4e37;
+      border-radius: 5px;
+      margin-bottom: 20px;
+    }
+
+.cart {
+            margin-bottom: 20px;
+        }
+        .cart-items li {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 5px;
+        }
+        .remove-item {
+            cursor: pointer;
+            color: red;
+            margin-left: 10px;
+        }
+        .form-group {
+            margin-bottom: 15px;
+        }
+        label {
+            display: block;
+            margin-bottom: 5px;
+        }
+        input, textarea {
+            width: 100%;
+            padding: 8px;
+            box-sizing: border-box;
+        }
+        button {
+            margin-top: 10px;
+            padding: 10px 15px;
+            background-color: #28a745;
+            color: white;
+            border: none;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: #218838;
+        }
+        .erase-btn {
+            background-color: #dc3545;
+        }
+        .erase-btn:hover {
+            background-color: #c82333;
+        }
+
+  .container1 {
+            max-width: 600px;
+            margin: 0 auto;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 3px;
+            background-color: #f9f9f9;
+        }
+        .form-group {
+            margin-bottom: 5px;
+        }
+        label {
+            display: block;
+            margin-bottom: 5px;
+        }
+        input, textarea {
+            width: 100%;
+            padding: 3px;
+            box-sizing: border-box;
+        }
+  	footer {
+            background-color: #333;
+            color: #fff;
+            text-align: center;
+            padding: 20px;
+        }
+
+
+    </style>
+</head>
+<body>
+
+    <header>
+        <h1>The Daily Brew</h1>
+        <nav>
+            <a href="Index.html">Home</a>
+            <a href="Services.html">Services</a>
+            <a href="Testimonial.html">Testimonials</a>
+        </nav>
+    </header>
+
+    <section id="services">
+        <h2>Our Services</h2>
+
+        <div class="container">
+            <h3 class="bordered">Coffee</h3>
+
+<div class="services">
+
+	       <div class="service">
+           	    <img src="file:///C:/Users/glenn/Downloads/coffee%20pic/Espresso.jpg.jpg" alt="Espresso"
+                <h3>Espresso</h3>
+                    <p>Bold, rich, and smooth, a perfect energy boost in every shot.</p>
+                    <label for="espresso-size">Choose size:</label>
+                    <select id="espresso-size" class="coffee-size">
+                        <option value="110.00">Primo (₱110.00)</option>
+                        <option value="120.50">Medio ₱120.50</option>
+                        <option value="135.50">Massimo ₱135.50</option>
+                    </select>
+                    <button onclick="addEspressoToCart()">Add to Cart</button>
+                </div>
+
+                <div class="service">
+                    <img src="file:///C:/Users/glenn/Downloads/coffee%20pic/OIP%20(6).jpg" alt="Americano">
+                    <h3>Americano</h3>
+                    <p>Bold espresso with hot water for a smooth flavor.</p>
+                    <label for="americano-size">Choose size:</label>
+                    <select id="americano-size" class="coffee-size">
+                        <option value="110.00">Primo ₱110.00</option>
+                        <option value="130.50">Medio ₱130.50</option>
+                        <option value="140.50">Massimo ₱140.50</option>
+                    </select>
+                    <button onclick="addAmericanoToCart()">Add to Cart</button>
+                </div>
+
+<div class="service">
+    <img src="file:///C:/Users/glenn/Downloads/coffee%20pic/matcha_1.webp" alt="Matcha Latte" style="width: 100%;">
+    <h3>Matcha Latte</h3>
+    <p>Creamy matcha green tea with steamed milk.</p>
+    <label for="Matcha Lattte-size">Choose size:</label>
+    <select id="Matcha Latte-size" class="coffee-size">
+        <option value="115.00">Primo ₱115.00</option>
+        <option value="125.50">Medio ₱125.50</option>
+        <option value="130.50">Massimo ₱130.50</option>
+    </select>
+    <button onclick="addMatchaLatteToCart()">Add to Cart</button>
+</div>
+
+<div class="service">
+    <img src="file:///C:/Users/glenn/Downloads/coffee%20pic/0124e145a09d0795f5a0e522dcc775b1.jpg" alt="Mocha Latte" style="width: 100%;">
+    <h3>Mocha Latte</h3>
+    <p>Bold espresso with hot water for a smooth flavor.</p>
+    <label for="Mocha Latte-size">Choose size:</label>
+    <select id="Mocha Latte-size" class="coffee-size">
+        <option value="130.00">Primo ₱130.00</option>
+        <option value="145.50">Medio ₱145.50</option>
+        <option value="155.50">Massimo ₱155.50</option>
+    </select>
+    <button onclick="addMochaLatteToCart()">Add to Cart</button>
+</div>
+
+<div class="service">
+    <img src="file:///C:/Users/glenn/Downloads/coffee%20pic/cappucino-fotoliastock.jpg" alt="Cappuccino" style="width: 100%;">
+    <h3>Cappuccino</h3>
+    <p>Bold espresso with hot water for a smooth flavor.</p>
+    <label for="Cappuccino-size">Choose size:</label>
+    <select id="Cappuccino-size" class="coffee-size">
+        <option value="120.00">Primo ₱120.00 </option>
+        <option value="130.50">Medio ₱130.50</option>
+        <option value="140.50">Massimo ₱140.50</option>
+    </select>
+    <button onclick="addCappuccinoToCart()">Add to Cart</button>
+</div>
+
+<div class="service">
+    <img src="file:///C:/Users/glenn/Downloads/coffee%20pic/84641136_53bfef3acf_b.jpg" alt="Cold Brew" style="width: 100%;">
+    <h3>Macchiato</h3>
+    <p>Slow-steeped coffee, chilled for a smooth and refreshing taste.</p>
+    <label for="Cold Brew-size">Choose size:</label>
+    <select id="Macchiato-size" class="coffee-size">
+        <option value="90.00">Primo ₱90.00 </option>
+        <option value="100.50">Medio ₱100.50</option>
+        <option value="115.50">Massimo ₱115.50</option>
+    </select>
+    <button onclick="addMacchiatoToCart()">Add to Cart</button>
+</div>
+
+<div class="service">
+    <img src="file:///C:/Users/glenn/Downloads/coffee%20pic/cold-brew-coffee-tutorial.jpg" alt="Cold Brew" style="width: 100%;">
+    <h3>Cold Brew</h3>
+    <p>Slow-steeped coffee, chilled for a smooth and refreshing taste.</p>
+    <label for="Cold Brew-size">Choose size:</label>
+    <select id="Cold Brew-size" class="coffee-size">
+        <option value="120.00">Primo ₱120.00</option>
+        <option value="125.50">Medio ₱125.50 </option>
+        <option value="135.50">Massimo ₱135.50</option>
+    </select>
+    <button onclick="addColdBrewToCart()">Add to Cart</button>
+</div>
+
+<div class="service">
+    <img src="file:///C:/Users/glenn/Downloads/coffee%20pic/OIP%20(7).jpg" alt="Biscoff Affogato" style="width: 100%;">
+    <h3>Biscoff Affogato</h3>
+    <p>Espresso over vanilla ice cream with Biscoff crumbs.</p>
+    <label for="Biscoff Affogato-size">Choose size:</label>
+    <select id="Biscoff Affogato-size" class="coffee-size">
+        <option value="130.00">Primo ₱130.00 </option>
+        <option value="145.50">Medio ₱145.50</option>
+        <option value= "150.00">Massimo ₱150.50</option>
+    </select>
+    <button onclick="addBiscoffAffogatoToCart()">Add to Cart</button>
+</div>
+
+<div class="container">
+        <h3 class="bordered">Delight</h3> <!-- Added class 'bordered' -->
+        <div class="services">   
+
+
+<div class="service">
+    <img src="file:///C:/Users/glenn/Downloads/coffee%20pic/eggless-chocolate-chip-cookies-on-wire-rack-6-683x1024.jpg" style="width: 100%;">
+    <h3>Chocolate Chip Cookies</h3>
+    <p>Sweet, buttery, and chewy.</p>
+    <label for="Chocolate Chip Ccookies-size"></label>
+ <p><strong>Price:</strong> ₱30.00</p>
+
+    <select id="Chocolate Chip Cookies-size" class="coffee-size">
+        <option value="30.00">1pcs </option>
+        <option value="60.50">2pcs </option>
+        <option value="90.50">3pcs </option>
+    </select>
+    <button onclick="addChocolateChipCookiesToCart()">Add to Cart</button>
+</div>
+
+<div class="service">
+    <img src="file:///C:/Users/glenn/Downloads/coffee%20pic/oatmeal-raisin-cookies-pin.jpg" alt="Oatmeal Raisin" style="width: 100%;">
+    <h3>Oatmeal Raisin</h3>
+    <p>Sweet, buttery, and chewy.</p>
+    <label for="Oatmeal Raisin-size"> </label>
+ <p><strong>Price:</strong> ₱45.00</p>
+
+    <select id="Oatmeal Raisin-size" class="coffee-size">
+        <option value="45.00">1pcs </option>
+        <option value="90.00">2pcs </option>
+        <option value="135.00">3pcs </option>
+    </select>
+    <button onclick="addOatmealRaisinToCart()">Add to Cart</button>
+</div> 
+
+<div class="service">
+    <img src="file:///C:/Users/glenn/Downloads/coffee%20pic/OIP%20(5).jpg" alt="Brownies" style="width: 100%;">
+    <h3>Brownies</h3>
+    <p>Sweet, buttery, and chewy.</p>
+    <label for="Brownies-size"> </label>
+ <p><strong>Price:</strong> ₱35.00</p>
+
+	<select id="Brownies-size" class="coffee- size">
+        <option value="35.00">1pcs </option>
+        <option value="70.00">2pcs </option>
+        <option value="105.00">3pcs </option>
+    </select>
+    <button onclick="addBrowniesToCart()">Add to Cart</button>
+</div>
+
+<div class="service">
+    <img src="file:///C:/Users/glenn/Downloads/coffee%20pic/chocolate-chip-muffins-featured.jpg" alt="Muffins" style="width: 100%;">
+    <h3>Muffins</h3>
+    <p>Sweet, buttery, and chewy.</p>
+    <label for="Muffins-size"> </label>
+ <p><strong>Price:</strong> ₱30.00</p>
+
+    <select id="Muffins-size" class="coffee-size">
+        <option value="30.00">1pcs </option>
+        <option value="60.00">2pcs </option>
+      <option value="90.00"> 3pcs </option>
+    </select>
+    <button onclick="addMuffinsToCart()">Add to Cart</button>
+</div>
+
+    </section>
+<div class="container1">
+    <div id="cart">
+        <h3>Your Cart</h3>
+        <ul id="cart-items"></ul>
+        <p><strong>Total: ₱<span id="total-price">0.00</span></strong></p>
+        <button onclick="eraseOrder()">Erase Order</button>
+        <button onclick="placeOrder()">Place Order</button>
+    </div>
+
+    <h2>Cash on Delivery Form</h2>
+    <form id="delivery-form">
+        <div class="form-group">
+            <label for="name">Full Name:</label>
+            <input type="text" id="name" required>
+        </div>
+        <div class="form-group">
+            <label for="phone">Phone Number:</label>
+            <input type="text" id="phone" required>
+        </div>
+        <div class="form-group">
+            <label for="street">Street Address:</label>
+            <input type="text" id="street" required>
+        </div>
+        <div class="form-group">
+            <label for="city">City:</label>
+            <input type="text" id="city" required>
+        </div>
+        <div class="form-group">
+            <label for="postal">Postal Code:</label>
+            <input type="text" id="postal" required>
+        </div>
+        <div class="form-group">
+            <label for="instructions">Special Instructions (Optional):</label>
+            <textarea id="instructions"></textarea>
+        </div>
+    </form>
+</div>
+ <footer class="hidden">
+        <p>&copy; 2024 The Daily Brew. All rights reserved.</p>
+    </footer>
+
+<script>
+    let cart = [];
+    let total = 0;
+
+    function addEspressoToCart() {
+        const sizeDropdown = document.getElementById('espresso-size');
+        const selectedSize = sizeDropdown.options[sizeDropdown.selectedIndex].text;
+        const selectedPrice = parseFloat(sizeDropdown.value);
+        addToCart(`Espresso - ${selectedSize}`, selectedPrice);
+    }
+
+    function addAmericanoToCart() {
+        const sizeDropdown = document.getElementById('americano-size');
+        const selectedSize = sizeDropdown.options[sizeDropdown.selectedIndex].text;
+        const selectedPrice = parseFloat(sizeDropdown.value);
+        addToCart(`Americano - ${selectedSize}`, selectedPrice);
+    }
+
+    function addMatchaLatteToCart() {
+        const sizeDropdown = document.getElementById('Matcha Latte-size');
+        const selectedSize = sizeDropdown.options[sizeDropdown.selectedIndex].text;
+        const selectedPrice = parseFloat(sizeDropdown.value);
+
+        addToCart(`Matcha Latte - ${selectedSize}`, selectedPrice);
+    }
+
+    function addMochaLatteToCart() {
+        const sizeDropdown = document.getElementById('Mocha Latte-size');
+        const selectedSize = sizeDropdown.options[sizeDropdown.selectedIndex].text;
+        const selectedPrice = parseFloat(sizeDropdown.value);
+
+        addToCart(`Mocha Latte - ${selectedSize}`, selectedPrice);
+    }
+
+    function addCappuccinoToCart() {
+        const sizeDropdown = document.getElementById('Cappuccino-size');
+        const selectedSize = sizeDropdown.options[sizeDropdown.selectedIndex].text;
+        const selectedPrice = parseFloat(sizeDropdown.value);
+
+        addToCart(`Cappuccino - ${selectedSize}`, selectedPrice);
+    }
+
+    function addMacchiatoToCart() {
+        const sizeDropdown = document.getElementById('Macchiato-size');
+        const selectedSize = sizeDropdown.options[sizeDropdown.selectedIndex].text;
+        const selectedPrice = parseFloat(sizeDropdown.value);
+
+        addToCart(`Macchiato - ${selectedSize}`, selectedPrice);
+    }
+
+    function addColdBrewToCart() {
+        const sizeDropdown = document.getElementById('Cold Brew-size');
+        const selectedSize = sizeDropdown.options[sizeDropdown.selectedIndex].text;
+        const selectedPrice = parseFloat(sizeDropdown.value);
+
+        addToCart(`Cold Brew - ${selectedSize}`, selectedPrice);
+    }
+
+    function addBiscoffAffogatoToCart() {
+        const sizeDropdown = document.getElementById('Biscoff Affogato-size');
+        const selectedSize = sizeDropdown.options[sizeDropdown.selectedIndex].text;
+        const selectedPrice = parseFloat(sizeDropdown.value);
+
+        addToCart(`Biscoff Affogato - ${selectedSize}`, selectedPrice);
+    }
+
+    function addChocolateChipCookiesToCart() {
+        const sizeDropdown = document.getElementById('Chocolate Chip Cookies-size');
+        const selectedSize = sizeDropdown.options[sizeDropdown.selectedIndex].text;
+        const selectedPrice = parseFloat(sizeDropdown.value);
+
+        addToCart(`Chocolate Chip Cookies - ${selectedSize}`, selectedPrice);
+    }
+
+    function addOatmealRaisinToCart() {
+        const sizeDropdown = document.getElementById('Oatmeal Raisin-size');
+        const selectedSize = sizeDropdown.options[sizeDropdown.selectedIndex].text;
+        const selectedPrice = parseFloat(sizeDropdown.value);
+
+        addToCart(`Oatmeal Raisin - ${selectedSize}`, selectedPrice);
+    }
+
+    function addBrowniesToCart() {
+        const sizeDropdown = document.getElementById('Brownies-size');
+        const selectedSize = sizeDropdown.options[sizeDropdown.selectedIndex].text;
+        const selectedPrice = parseFloat(sizeDropdown.value);
+
+        addToCart(`Brownies - ${selectedSize}`, selectedPrice);
+    }
+
+    function addMuffinsToCart() {
+        const sizeDropdown = document.getElementById('Muffins-size');
+        const selectedSize = sizeDropdown.options[sizeDropdown.selectedIndex].text;
+        const selectedPrice = parseFloat(sizeDropdown.value);
+
+        addToCart(`Muffins - ${selectedSize}`, selectedPrice);
+    }
+
+    function addToCart(item, price) {
+        cart.push({ item, price });
+        total += price;
+        updateCart();
+    }
+
+    function updateCart() {
+        const cartItems = document.getElementById('cart-items');
+        const totalPrice = document.getElementById('total-price');
+        cartItems.innerHTML = '';
+        cart.forEach(({ item, price }, index) => {
+            const li = document.createElement('li');
+            li.textContent = `${item} - ₱${price.toFixed(2)}`;
+            const removeButton = document.createElement('span');
+            removeButton.textContent = 'Remove';
+            removeButton.classList.add('remove-item');
+            removeButton.onclick = () => removeFromCart(index);
+            li.appendChild(removeButton);
+            cartItems.appendChild(li);
+        });
+        totalPrice.textContent = total.toFixed(2);
+    }
+
+    function removeFromCart(index) {
+        total -= cart[index].price;
+        cart.splice(index, 1);
+        updateCart();
+    }
+
+    function eraseOrder() {
+        cart = [];
+        total = 0;
+        updateCart();
+    }
+
+    function validateDeliveryForm() {
+        const name = document.getElementById('name').value;
+        const phone = document.getElementById('phone').value;
+        const street = document.getElementById('street').value;
+        const city = document.getElementById('city').value;
+        const postal = document.getElementById('postal').value;
+
+        if (!name || !phone || !street || !city || !postal) {
+            alert('Please fill out all required address fields before placing the order.');
+            return false;
+        }
+        return true;
+    }
+
+    function placeOrder() {
+        if (cart.length === 0) {
+            alert('Your cart is empty. Please add items before placing an order.');
+            return;
+        }
+
+        if (!validateDeliveryForm()) {
+            return;
+        }
+
+        const orderSummary = cart
+            .map(({ item, price }) => `${item} - ₱${price.toFixed(2)}`)
+            .join('\n');
+
+        const name = document.getElementById('name').value;
+        const phone = document.getElementById('phone').value;
+        const street = document.getElementById('street').value;
+        const city = document.getElementById('city').value;
+        const postal = document.getElementById('postal').value;
+        const instructions = document.getElementById('instructions').value;
+
+
+
+        const deliveryInfo = `
+            Full Name: ${name}
+            Phone: ${phone}
+            Address: ${street}, ${city}, ${postal}
+            Special Instructions: ${instructions || 'None'}
+        `;
+
+        const confirmation = confirm(
+            `Your Order:\n${orderSummary}\n\nTotal: ₱${total.toFixed(2)}\n\nDelivery Info:\n${deliveryInfo}\n\nPlace this order?`
+        );
+
+        if (confirmation) {
+            alert('Thank you for your order! Your order has been placed successfully.');
+            eraseOrder();
+        }
+    }
+</script>
+
+
+</body>
+</html>
